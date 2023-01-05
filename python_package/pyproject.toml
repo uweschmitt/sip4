@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sip4"
+version = "0.0.1"
+authors = [
+  { name="Uwe Schmitt", email="uwe.schmitt@id.ethz.ch" },
+]
+
+description = "Build SIP 4"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools]
+include-package-data = true
