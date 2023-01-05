@@ -9,11 +9,13 @@ from setuptools import setup, Extension
 from glob import glob
 
 setup(
+    name="sip4",
+    version="0.0.1",
     ext_modules=[
         Extension(
             name="PyQt5.sip",
-            sources=list(glob("PyQt5/siplib/*.c")),
+            sources=glob("PyQt5/siplib/*.c"),
             include_dirs=["PyQt5/siplib/"],
         )
-    ]
+    ],
 )
