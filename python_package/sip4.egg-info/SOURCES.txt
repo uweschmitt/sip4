@@ -1,7 +1,0 @@
-MANIFEST.in
-pyproject.toml
-PyQt5/sip.so
-sip4.egg-info/PKG-INFO
-sip4.egg-info/SOURCES.txt
-sip4.egg-info/dependency_links.txt
-sip4.egg-info/top_level.txt

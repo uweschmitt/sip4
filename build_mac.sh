@@ -14,4 +14,4 @@ make
 cp siplib/sip.so python_package/PyQt5
 
 cd python_package
-python -m build
+python -m build -w
