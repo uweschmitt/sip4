@@ -14,7 +14,7 @@ setup(
     ext_modules=[
         Extension(
             name="PyQt5.sip",
-            sources=glob("PyQt5/siplib/*.c"),
+            sources=list(glob("PyQt5/siplib/*.c")) + list(glob("PyQt5/siplib/*.cpp")),
             include_dirs=["PyQt5/siplib/"],
         )
     ],
