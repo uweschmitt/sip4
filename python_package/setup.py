@@ -10,7 +10,7 @@ from glob import glob
 
 setup(
     name="sip4",
-    version="0.0.1",
+    version="0.0.2",
     ext_modules=[
         Extension(
             name="PyQt5.sip",
