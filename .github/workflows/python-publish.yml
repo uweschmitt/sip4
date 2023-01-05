@@ -81,7 +81,7 @@ jobs:
       run: ./build_mac.sh
     - name: Publish package
       run: |
-        twine upload python_package/dist/*.whl
+        twine upload python_package\dist\*.whl
       env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
