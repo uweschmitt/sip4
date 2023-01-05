@@ -18,7 +18,6 @@ jobs:
   build_and_upload_package_macos:
 
     runs-on: macos-latest
-    continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +32,7 @@ jobs:
     - name: Build package
       run: ./build_package.sh
     - name: Publish package
-      run: twine upload python_package/dist/*.whl
+      run: twine upload --skip-existing python_package/dist/*.whl
       env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
@@ -42,7 +41,6 @@ jobs:
   build_and_upload_package_linux:
 
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
@@ -59,7 +57,7 @@ jobs:
     - name: Publish package
       run: |
         auditwheel repair python_package/dist/*.whl
-        twine upload wheelhouse/*manylinux1*.whl
+        twine upload --skip-existing wheelhouse/*manylinux1*.whl
       env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
@@ -68,7 +66,6 @@ jobs:
   build_and_upload_package_windows:
 
     runs-on: windows-latest
-    continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
@@ -91,7 +88,7 @@ jobs:
     - name: Publish package
       working-directory: python_package
       run: |
-        twine upload dist\*.whl
+        twine upload --skip-existing dist\*.whl
       env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
