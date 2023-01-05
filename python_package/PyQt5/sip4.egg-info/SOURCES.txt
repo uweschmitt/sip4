@@ -1,7 +1,16 @@
-MANIFEST.in
 pyproject.toml
+setup.py
 PyQt5/sip.so
 PyQt5/sip4.egg-info/PKG-INFO
 PyQt5/sip4.egg-info/SOURCES.txt
 PyQt5/sip4.egg-info/dependency_links.txt
 PyQt5/sip4.egg-info/top_level.txt
+PyQt5/siplib/apiversions.c
+PyQt5/siplib/array.c
+PyQt5/siplib/descriptors.c
+PyQt5/siplib/int_convertors.c
+PyQt5/siplib/objmap.c
+PyQt5/siplib/qtlib.c
+PyQt5/siplib/siplib.c
+PyQt5/siplib/threads.c
+PyQt5/siplib/voidptr.c

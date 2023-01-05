@@ -1,22 +1,19 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+import os
 
-try:
+here = os.path.dirname(os.path.abspath(__file__))
 
-    from wheel.bdist_wheel import bdist_wheel as _bdist_wheel
+from setuptools import setup, Extension
 
-    # enforce platform tag:
-    # https://stackoverflow.com/questions/45150304/
-
-    class bdist_wheel(_bdist_wheel):
-        def finalize_options(self):
-            _bdist_wheel.finalize_options(self)
-            self.root_is_pure = False
-
-except ImportError:
-    bdist_wheel = None
+from glob import glob
 
 setup(
-    cmdclass={"bdist_wheel": bdist_wheel},
+    ext_modules=[
+        Extension(
+            name="PyQt5.sip",
+            sources=list(glob("PyQt5/siplib/*.c")),
+            include_dirs=["PyQt5/siplib/"],
+        )
+    ]
 )

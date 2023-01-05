@@ -9,9 +9,5 @@
 python build.py prepare
 python configure.py --arch=x86_64 --sip-module PyQt5.sip --no-tools
 
-make
-
-cp siplib/sip.so python_package/PyQt5
-
 cd python_package
-python -m build -w
+python setup.py bdist_wheel

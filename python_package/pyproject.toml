@@ -14,7 +14,8 @@ readme = "README.md"
 requires-python = ">=3.9"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["PyQt5"]
+exclude = ["PyQt5/siplib", "siplib"]
 
 [tool.setuptools]
 include-package-data = true
